@@ -2,11 +2,12 @@
 
 <h1>Listing Questions:</h1><br /> <br />
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th></th>
       <th></th>
+      <th></th>&nbsp
       <th></th>
     </tr>
   </thead>
@@ -21,9 +22,10 @@
           <li><%= @questions[i].ans4 %></li><br />
           
           <pre><strong> Ans: </strong> &nbsp<%= @questions[i].correct_ans %></pre>
-      </ol><hr />
+      </ol>
      </td>
      <td></td>
+     <td><%= link_to 'Show', @questions[i] %> </td>
      <td><%= link_to 'Destroy', @questions[i], method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
     <% end %> 
