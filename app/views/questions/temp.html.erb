@@ -1,0 +1,25 @@
+<% for i in 0..@questions.count do %>
+    <tr>
+     <td> <%= @questions[i].q1 %><br />
+      <ul><li><%= @questions[i].ans1 %></li><br />
+      <li><%= @questions[i].ans2 %></li><br />
+      <li><%= @questions[i].ans3 %></li><br />
+      <li><%= @questions[i].ans4 %></li></ul><hr />
+     </td>
+     <td></td>
+    </tr>
+ <% end %>
+
+
+
+ <% @questions.each do |question|%>
+      <tr>
+        <td><%= question.id %>. &nbsp<%= question.q1 %><br />
+        <ul> <li><%= question.ans1 %></li>
+        <li><%= question.ans2 %></li>
+        <li><%= question.ans3 %></li>
+        <li><%= question.ans4 %></li></ul><hr />
+        
+       </td>
+       <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td></tr>
+    <% end %>

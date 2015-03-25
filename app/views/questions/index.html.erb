@@ -1,26 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Questions:</h1>
+<h1>Listing Questions:</h1><br /> <br />
 
 <table>
   <thead>
     <tr>
-      <th>Questions:</th>
+      <th></th>
+      <th></th>
       <th></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @questions.each do |question|%>
-      <tr>
-        <td><%= question.id %>. &nbsp<%= question.q1 %><br />
-        <ul> <li><%= question.ans1 %></li>
-        <li><%= question.ans2 %></li>
-        <li><%= question.ans3 %></li>
-        <li><%= question.ans4 %></li></ul><hr />
-        
-       </td>
-       <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td></tr>
+    <% for i in 0..@num %>
+    <tr>
+     <td><strong> <%= (i+1) %>. &nbsp <%= @questions[i].q1 %></strong><br /><br />
+          <ol type="A"><li><%= @questions[i].ans1 %></li><br />
+          <li><%= @questions[i].ans2 %></li><br />
+          <li><%= @questions[i].ans3 %></li><br />
+          <li><%= @questions[i].ans4 %></li><br />
+          <strong> Ans: </strong> &nbsp
+          <%= @questions[i].correct_ans %>
+      </ol><hr />
+     </td>
+     <td></td>
+     <td><%= link_to 'Destroy', @questions[i], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
     <% end %> 
   </tbody>
 </table>
