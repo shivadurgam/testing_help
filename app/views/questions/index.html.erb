@@ -14,13 +14,13 @@
   <tbody>
     <% for i in 0..@num %>
     <tr>
-     <td><strong> <%= (i+1) %>. &nbsp <%= @questions[i].q1 %></strong><br /><br />
+     <td><strong> <%= (i+1) %>. &nbsp <%= simple_format(@questions[i].q1) %></strong><br /><br />
           <ol type="A"><li><%= @questions[i].ans1 %></li><br />
           <li><%= @questions[i].ans2 %></li><br />
           <li><%= @questions[i].ans3 %></li><br />
           <li><%= @questions[i].ans4 %></li><br />
-          <strong> Ans: </strong> &nbsp
-          <%= @questions[i].correct_ans %>
+          
+          <pre><strong> Ans: </strong> &nbsp<%= @questions[i].correct_ans %></pre>
       </ol><hr />
      </td>
      <td></td>
