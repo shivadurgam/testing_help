@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
+
+
   get 'static_page/home' => "static_page#home", as: :static_home
 
   resources :users
   resources :questions
-
+  resources :exams, :only => [:new, :create, :destroy]
   root "static_page#home"
 
   # The priority is based upon order of creation: first created -> highest priority.
